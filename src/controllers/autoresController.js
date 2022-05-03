@@ -4,7 +4,10 @@ class AutorController {
 
     static listarAutores = (req, res) => {
         // ainda não estamos tratando o erro caso ocorra...
-        autores.find((err, autores) => { 
+        autores.find()
+            .populate('endereco')
+            .exec(
+        (err, autores) => { 
             res.status(200).json(autores);
         })
     }
