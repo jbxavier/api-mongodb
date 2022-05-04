@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // aqui colocar a string de conexão definida no atlas(servidor aws)
 mongoose.connect(
-    "mongodb+srv://admin:102030@cluster0.w3rq7.mongodb.net/alura-node");
+    "mongodb+srv://admin:xxxxxx@cluster0.w3rq7.mongodb.net/axxxxx-xxxx");
 /* Essa é a string original: substituir conforme foi realizado acima:
 
  mongodb+srv://admin:<password>@cluster0.w3rq7.mongodb.net/
