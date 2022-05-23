@@ -44,6 +44,18 @@ class AutorController {
             } else {
                 res.status(200).send(autores);
             }
+        }).populate('endereco')
+    }
+
+    static buscarAutorPorCpf = (req, res) => {
+        const cpf = req.params.cpf;
+
+        autores.find({"cpf": cpf}, (err, autores) => {
+            if (err) {
+                res.status(400).send({message: `${err.message} - CPF não localizado`})
+            } else {
+                res.status(200).send(autores);
+            }
         })
     }
 

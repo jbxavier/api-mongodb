@@ -1,3 +1,4 @@
+const { response } = require('../app.js');
 const livros = require('../models/Livro.js');
 
 class LivroController {
@@ -63,7 +64,10 @@ class LivroController {
     static listarLivroPorEditora = (req, res) => {
         const editora = req.query.editora;
 
-        livros.find({'editora': editora}, {}, (err, livros) => {
+        const query = {"editora": new RegExp(editora, "i")};
+        //livros.find({"editora": editora}, {}, (err, livros) => {
+
+        livros.find(query, {}, (err, livros) => {
             res.status(200).send(livros);
         })
     }
